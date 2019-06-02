@@ -1,0 +1,39 @@
+#!/bin/sh
+
+
+# 2 juni 2019
+# aplikasi SpMacro
+# perekam gui untuk xmaro
+
+#  ____                                      _   
+# / ___| _   _ _ __   __ _ _ __   __ _  __ _| |_ 
+# \___ \| | | | '_ \ / _` | '_ \ / _` |/ _` | __|
+#  ___) | |_| | |_) | (_| | | | | (_| | (_| | |_ 
+# |____/ \__,_| .__/ \__,_|_| |_|\__, |\__,_|\__|
+#             |_|                |___/           
+
+
+
+# menampilkan dialog button
+PILIH=`zenity --info --title 'APlikasi XMACRO' --width=300 --text "Pilih Bosku ??" --extra-button="REKAM" --extra-button="PLAY"`;
+
+# mengeksekusi pilihan
+case $PILIH in
+	'REKAM' )
+			# proses merekam 
+			notify-send "Merekam Konfig , tekan ESC untuk Selesai";
+			xmacrorec2 -k 9 > `zenity --title="Pilih Letak file config" --file-selection --save`; 
+			notify-send "Sukses Merekam config";
+		;;
+
+	'PLAY' )
+			# proses play
+			FILE=`zenity --title="Pilih Letak file config" --file-selection`;
+			LOOP=`zenity --entry --text="Banyaknya loop"`;
+			for (( i = 0; i < $LOOP; i++ )); do
+				notify-send "Play ROBOT KE $i" ;
+				xmacroplay $DISPLAY < $FILE;
+			done
+		;;
+esac
+
