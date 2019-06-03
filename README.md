@@ -5,6 +5,11 @@ SPMacro
 
 Ini adalah aplikasi yang saya buat karena keisengan saya wkwkwk, karna kebutuhan kusus seperti boot spam dan auto yang lainya yang membuat jari jari saya keriting akhirnya saya membuat aplikasi gui ini untuk membantu pekerjaan saya :D
 
+### kegunaan ??
+ada yang tanya di grup kegunaanya awkwkwk :v
+
+- log kegiatan di linuxmu tentunya seperti aktivas keyboard dan lain lain
+- bikin auto click /  robot di linux mu :V
 
 
 ### dependency / paket tambahan
